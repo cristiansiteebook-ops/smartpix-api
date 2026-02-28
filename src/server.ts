@@ -9,7 +9,7 @@ app.get("/", (_req, res) => {
 
 const port = Number(process.env.PORT || 3000);
 
-// IMPORTANTÍSSIMO no Railway/Docker:
+// ESSENCIAL NO RAILWAY/DOCKER:
 app.listen(port, "0.0.0.0", () => {
   console.log(`Server running on port ${port}`);
 });
