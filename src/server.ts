@@ -3,11 +3,13 @@ import express from "express";
 const app = express();
 app.use(express.json());
 
-app.get("/", (req, res) => {
-  res.json({ message: "SmartPix API online 🚀" });
+app.get("/", (_req, res) => {
+  res.status(200).json({ message: "SmartPix API online 🚀" });
 });
 
-const port = process.env.PORT || 3000;
-app.listen(port, () => {
+const port = Number(process.env.PORT || 3000);
+
+// IMPORTANTÍSSIMO no Railway/Docker:
+app.listen(port, "0.0.0.0", () => {
   console.log(`Server running on port ${port}`);
 });
